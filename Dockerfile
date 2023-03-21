@@ -5,7 +5,7 @@ RUN apt-get upgrade
 RUN apt install -y nginx
 RUN rm -rf /var/lib/apt/lists/*
 #remove stuff
-COPY index.html /var/www/html/index.nginx-debian.html
+COPY website/index.html /var/www/html/index.nginx-debian.html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
