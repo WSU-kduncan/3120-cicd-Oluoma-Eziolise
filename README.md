@@ -4,7 +4,7 @@ This project uses docker to create an image that hosts a website when ran as a c
 ## Run Project Locally
 ### How to install docker + dependencies
 - Follow the `Install using the apt Repository` instructions in [How to install docker engine for ubuntu](https://docs.docker.com/engine/install/ubuntu/) exactly.
-- If docker commands do not run after doing all the steps, try `docker start`.
+- If docker commands do not run after doing all the steps, try starting docker as a service.
 - This process should install all dependencies needed for docker to work.
 ### How to build an image from the Dockerfile
 - To build a Dockerfile use:  
