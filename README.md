@@ -56,7 +56,7 @@ docker push dockerhubUserName/repository-name:tag
 Configuring Github Secrets:
 How to add Dockerhub username and password/access token as Github Secrets.
 - Navigate to the repository you want to add the secret to and go into the settings for that repository (Note: not Github account settings).
-- Naviagte to the `security` section and then the `secrets and variables` section within it.
+- Navigate to the `security` section and then the `secrets and variables` section within it.
 - Click `New repository secret`.
 - Add the Dockerhub username and access token as separate secrets.  
 
@@ -64,7 +64,7 @@ Behaviour of Github Workflow:
 The workflow builds and pushes a new image to Dockerhub.
 - The workflow will be triggerd when a push to the main branch occurs.
 - It will excute the buildAndPush job on the ubuntu-latest runner.
-- It will then set up the environment to build and push the new Docker image using the Github Secrets created.
+- It will also set up the environment to build and push the new Docker image using the Github Secrets created.
 - Once the image is built, it will be pushed to Dockerhub with the tag `username/repoName:tag`.
 
 
