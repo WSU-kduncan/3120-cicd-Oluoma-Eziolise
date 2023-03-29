@@ -1,6 +1,8 @@
 # 3120-cicd-Oluoma-Eziolise
 ## CI Project Overview
-This project uses docker to create an image that hosts a website when ran as a container.
+This project uses docker to create an image that hosts a website when ran as a container.  
+What does this process look like?  
+![Friendly image describing the process](images/CI_Diagram.PNG)
 ## Dockerize it
 ### How to install docker + dependencies
 - Follow the `Install using the apt Repository` instructions in [How to install docker engine for ubuntu](https://docs.docker.com/engine/install/ubuntu/) exactly.
