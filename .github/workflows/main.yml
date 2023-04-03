@@ -1,8 +1,8 @@
 name: my-first-flow
 on:
   push:
-    branches: 
-      - 'main'
+    #branches: 
+      #- 'main'
     tags:
       - 'v*.*.*'
 jobs:
@@ -21,8 +21,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           # list of Docker images to use as base name for tags
-          #images: |
-            #  name/app
+          images: |
+            oeziolise/starter-website
             #  ghcr.io/username/app
           # generate Docker tags based on the following events/attributes
           tags: |
