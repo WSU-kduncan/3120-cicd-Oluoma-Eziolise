@@ -1,0 +1,7 @@
+[
+	{
+		"id": "redeployment-webhook",
+		"execute-command": "/home/ubuntu/bin/restart.sh",
+		"command-working-directory": "/home/ubuntu"
+	}
+]
