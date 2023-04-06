@@ -69,4 +69,20 @@ The workflow builds and pushes a new image to Dockerhub.
 - It will also set up the environment to build and push the new Docker image using the Github Secrets created.
 - Once the image is built, it will be pushed to Dockerhub with the tag `username/repoName:tag`.
 
+## CD Project Overview
+This part of the project uses workflows to introduce version control to the images uploaded to Dockerhub. It also webhooks to automatically roll out image updates to servers hosting the site content.
 
+## Semantic Versioning
+One way to incorporate semantic versioning is by using Git Tags.
+Here is how to generate a tag in git / GitHub:
+- Once youve made a change to the image that you want to push to Dockerhub, create a git tag using this command:
+```
+git tag -a v*.*.* -m "message"
+```  
+What happens after this depends on how the workflow is set up. Here is the behavior of GitHub workflow once triggered:
+- First of all, To trigger the wokrflow, a tag that contains at least a major, minor, and patch must be created and pushed to Github.
+- Once pushed, the workflow will build and push the a new image to Dockerhub. 
+- Dockerhub will receive the image with 4 tags; one with the major verison, one with the major and minor version, one with the major, minor, and patch, and finally one with a latest tag.  
+
+Need proof?  
+Here is a link to my Dockerhub repository: [My DokcerHub](https://hub.docker.com/r/oeziolise/starter-website/tags)
