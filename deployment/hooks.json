@@ -1,7 +1,7 @@
 [
-	{
-		"id": "redeployment-webhook",
-		"execute-command": "/home/ubuntu/bin/restart.sh",
-		"command-working-directory": "/home/ubuntu"
-	}
+        {
+                "id": "my-chicken",
+                "execute-command": "/home/ubuntu/bin/restart.sh",
+                "command-working-directory": "/var/webhook"
+        }
 ]
