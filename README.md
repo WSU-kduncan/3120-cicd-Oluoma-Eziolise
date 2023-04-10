@@ -86,3 +86,31 @@ What happens after this depends on how the workflow is set up. Here is the behav
 
 Need proof?  
 Here is a link to my Dockerhub repository: [My DokcerHub](https://hub.docker.com/r/oeziolise/starter-website/tags)
+
+## Deployment
+
+### Installing Docker on an AWS Ubuntu instance
+To Install docker on the instance follow the same directions as stated in [How to install Docker + Dependencies](#how-to-install-docker--dependencies).  
+
+### Container Restart Script
+Using a script to restart the container once a new image is available aids in the automation process each time a container needs to be restarted based on an updated image. [Restart.sh](/deployment/restart.sh) uses the generic name `site` for all conatainers. When ran, restart.sh will stop and remove any running conatiners called site. It will then pull the latest image from my repository, oeziolise/starter-website. Finally, it will run a new container based off of the latest image that was just pulled. To use this script, it should be located in the ubuntu user's home directory or bin folder.
+
+### Setting up a Webhook on the Instance
+To install [adnanh's `webhook`](https://github.com/adnanh/webhook) use the following command:
+```
+sudo apt-get install webhook
+```  
+To get webhook to start, the path `/etc/webhook.conf` needs to exist. For the webhook to actually do something, create a hook in the /etc/webhook.conf file. Once the specified path exists and the hook is created, webhook should start up once the system boots as well as start listening for messages if the hook is configured properly.
+
+### Webhook Task Definition File
+The Webhook task definition file is a JSON file called [hooks.json](/deployment/hooks.json). The hook for this project is called `my-chicken`, and it runs the restart.sh script and sets the working directory to be /var/webhook (NOTE: /var/webhook likely will not automaticlly exist on the system and you might have to create it yourself). To replicate this, place the contents of [hooks.json](/deployment/hooks.json) in the file `/etc/webhook.conf`.
+
+### Configuring DockerHub to message the listener
+For Dockerhub to send messages to the listener, it needs a webhook on its end. Here is how to create one:
+- Select the repository to create the webhook for.
+- Select the Webhooks tab.
+- under `New Webhook`, enter the Webhook's name and the url the listener is listening on.
+- Click create.  
+Now, every time a new image is pushed to the specified repository on Dockerhub, it will send a message to the listener that will then trigger the hook to pull and restart the container. 
+
+VIDEO LINK: [My video](https://youtu.be/5xNVM8I8PSo)! (NOTE: The text that changes it at the bottom left of the site).
