@@ -1,6 +1,23 @@
 # 3120-cicd-Oluoma-Eziolise
 Project 4:
-- [CI Project Overview](#ci-project-overview)
+- [CI Project Overview](#ci-project-overview) 
+- [Dockerize it](#dockerize-it) 
+- [How to install docker + dependencies](#how-to-install-docker--dependencies)
+- [How to build an image from the Dockerfile](#how-to-build-an-image-from-the-dockerfile)
+- [How to Run the Container Locally](#how-to-run-the-container-locally)
+- [How to View the Project Running in the Container](#how-to-view-the-project-running-in-the-container)
+- [Github Actions and Dockerhub](#github-actions-and-dockerhub)
+
+Project 5:
+- [CD Project Overview](#cd-project-overview)
+- [Semantic Versioning](#semantic-versioning)
+- [Deployment](#deployment)
+- [Installing Docker on an AWS Ubuntu instance](#installing-docker-on-an-aws-ubuntu-instance)
+- [Container Restart Script](#container-restart-script)
+- [Setting up a Webhook on the Instance](#setting-up-a-webhook-on-the-instance)
+- [Webhook Task Definition File](#webhook-task-definition-file)
+- [Configuring DockerHub to message the listener](#configuring-dockerhub-to-message-the-listener)
+- [Video](#video)
 ## CI Project Overview
 This project uses docker to create an image that hosts a website when ran as a container.  
 What does this process look like?  
@@ -114,6 +131,8 @@ For Dockerhub to send messages to the listener, it needs a webhook on its end. H
 - under `New Webhook`, enter the Webhook's name and the url the listener is listening on.
 - Click create.  
 Now, every time a new image is pushed to the specified repository on Dockerhub, it will send a message to the listener that will then trigger the hook to pull and restart the container.   
+
+### Video
 Need proof?  
 Here is a link to a video of my site getting updated in real time:  
 VIDEO LINK: [My video](https://youtu.be/5xNVM8I8PSo)! (NOTE: The text that changes it at the bottom left of the site).
