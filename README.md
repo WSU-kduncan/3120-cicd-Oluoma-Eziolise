@@ -111,7 +111,7 @@ For Dockerhub to send messages to the listener, it needs a webhook on its end. H
 - Select the Webhooks tab.
 - under `New Webhook`, enter the Webhook's name and the url the listener is listening on.
 - Click create.  
-Now, every time a new image is pushed to the specified repository on Dockerhub, it will send a message to the listener that will then trigger the hook to pull and restart the container. 
-Need proof?
-Here is a link to a vidoe of my site getting updated automatically in real time:
+Now, every time a new image is pushed to the specified repository on Dockerhub, it will send a message to the listener that will then trigger the hook to pull and restart the container.   
+Need proof?  
+Here is a link to a vidoe of my site getting updated automatically in real time:  
 VIDEO LINK: [My video](https://youtu.be/5xNVM8I8PSo)! (NOTE: The text that changes it at the bottom left of the site).
