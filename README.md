@@ -89,8 +89,9 @@ The workflow builds and pushes a new image to Dockerhub.
 - Once the image is built, it will be pushed to Dockerhub with the tag `username/repoName:tag`.
 
 ## CD Project Overview
-This part of the project uses workflows to introduce version control to the images uploaded to Dockerhub. It also webhooks to automatically roll out image updates to servers hosting the site content.
-
+This part of the project uses workflows to introduce version control to the images uploaded to Dockerhub. It also webhooks to automatically roll out image updates to servers hosting the site content.  
+Here is a high-level diagram of the continuous deployment process featuring one sassy server:  
+![CD Diagram](/images/CD_Diagram.PNG)
 ## Semantic Versioning
 One way to incorporate semantic versioning is by using Git Tags.
 Here is how to generate a tag in git / GitHub:
