@@ -97,7 +97,11 @@ Here is how to generate a tag in git / GitHub:
 - Once youve made a change to the image that you want to push to Dockerhub, create a git tag using this command:
 ```
 git tag -a v*.*.* -m "message"
-```  
+```   
+Now, push this tag with this command ('*' will be replaced by the version numbers, major, minor, and patch):
+```
+git push origin v*.*.*
+```
 What happens after this depends on how the workflow is set up. Here is the behavior of GitHub workflow once triggered:
 - First of all, To trigger the wokrflow, a tag that contains at least a major, minor, and patch must be created and pushed to Github.
 - Once pushed, the workflow will build and push the a new image to Dockerhub. 
